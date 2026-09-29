@@ -1,0 +1,651 @@
+Date: Tue Sep 29 12:04:07 WAT 2026
+MQ Build Level=X.X.X(p1000-L260522)
+Java version: 21.0.9(21.0.9+10-LTS)
+Process ID: 561542
+--------------------------------------------------------------------
+29 de setembro de 2026, 12:04:07 WAT[main] com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection
+The TCP.ClntSndBuffSize property is not set in mqclient.ini or the JVM system properties. The JVM selected TCP send buffer size of 8 192 bytes is below the required minimum of 32 768. The JVM will therefore request the network layer to use a TCP send buffer size of 32 768 bytes.
+
+EXPLANATION:
+The TCP send buffer size selected by the JVM is below the minimum required. The IBM MQ messaging client will hint the network layer to use the specified send buffer size
+
+ACTION:
+None.
+--------------------------------------------------------------------
+29 de setembro de 2026, 12:04:07 WAT[main] com.ibm.mq.jmqi.remote.impl.RemoteTCPConnection
+The TCP.ClntRcvBuffSize property is not set in either mqclient.ini or the JVM system properties, so the network layer is using a TCP receive buffer size of 65 536 bytes.
+
+EXPLANATION:
+Because the TCP.ClntRcvBuffSize property is not configured, the IBM MQ messaging client will not set the receive buffer size. The network layer will choose the receive buffer size instead.
+
+ACTION:
+None.
+--------------------------------------------------------------------
+29 de setembro de 2026, 12:07:25 WAT[main] com.ibm.msg.client.jakarta.wmq.internal.WMQConnection
+Exception ignored as no exception listener is registered: '
+                       Message : com.ibm.msg.client.jakarta.jms.DetailedJMSException: JMSWMQ1107: A problem with this connection has occurred.
+An error has occurred with the IBM MQ JMS connection.
+Use the linked exception to determine the cause of this error.
+                         Class : class com.ibm.msg.client.jakarta.jms.DetailedJMSException
+                         Stack : com.ibm.msg.client.jakarta.wmq.common.internal.Reason.reasonToException(Reason.java:709)
+                               : com.ibm.msg.client.jakarta.wmq.common.internal.Reason.createException(Reason.java:229)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageConsumer.checkJmqiCallSuccess(WMQMessageConsumer.java:217)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageConsumer.checkJmqiCallSuccess(WMQMessageConsumer.java:156)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQConsumerShadow.getMsg(WMQConsumerShadow.java:1872)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQSyncConsumerShadow.receiveInternal(WMQSyncConsumerShadow.java:240)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQConsumerShadow.receive(WMQConsumerShadow.java:1475)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageConsumer.receive(WMQMessageConsumer.java:674)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsMessageConsumerImpl.receiveInboundMessage(JmsMessageConsumerImpl.java:1083)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsMessageConsumerImpl.receive(JmsMessageConsumerImpl.java:483)
+                               : com.ibm.mq.jakarta.jms.MQMessageConsumer.receive(MQMessageConsumer.java:212)
+                               : com.ibm.mq.demo.TicketSubscriber.waitForPublish(TicketSubscriber.java:91)
+                               : com.ibm.mq.demo.Reseller.main(Reseller.java:54)
+     Caused by [1] --> Message : com.ibm.mq.MQException: JMSCMQ0001: IBM MQ call failed with compcode '2' ('MQCC_FAILED') reason '2009' ('MQRC_CONNECTION_BROKEN').
+                         Class : class com.ibm.mq.MQException
+                         Stack : com.ibm.msg.client.jakarta.wmq.common.internal.Reason.createException(Reason.java:217)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageConsumer.checkJmqiCallSuccess(WMQMessageConsumer.java:217)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageConsumer.checkJmqiCallSuccess(WMQMessageConsumer.java:156)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQConsumerShadow.getMsg(WMQConsumerShadow.java:1872)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQSyncConsumerShadow.receiveInternal(WMQSyncConsumerShadow.java:240)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQConsumerShadow.receive(WMQConsumerShadow.java:1475)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageConsumer.receive(WMQMessageConsumer.java:674)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsMessageConsumerImpl.receiveInboundMessage(JmsMessageConsumerImpl.java:1083)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsMessageConsumerImpl.receive(JmsMessageConsumerImpl.java:483)
+                               : com.ibm.mq.jakarta.jms.MQMessageConsumer.receive(MQMessageConsumer.java:212)
+                               : com.ibm.mq.demo.TicketSubscriber.waitForPublish(TicketSubscriber.java:91)
+                               : com.ibm.mq.demo.Reseller.main(Reseller.java:54)
+'.
+
+EXPLANATION:
+An attempt was made to deliver an exception to the connections exception listener but a listener has not been registered.
+
+ACTION:
+An exception listener must be registered with the connection to receive its exceptions.
+--------------------------------------------------------------------
+29 de setembro de 2026, 12:07:25 WAT[main] com.ibm.msg.client.jakarta.wmq.internal.WMQConnection
+Exception ignored as no exception listener is registered: '
+                       Message : com.ibm.msg.client.jakarta.jms.DetailedJMSException: JMSWMQ1107: A problem with this connection has occurred.
+An error has occurred with the IBM MQ JMS connection.
+Use the linked exception to determine the cause of this error.
+                         Class : class com.ibm.msg.client.jakarta.jms.DetailedJMSException
+                         Stack : com.ibm.msg.client.jakarta.wmq.common.internal.Reason.reasonToException(Reason.java:709)
+                               : com.ibm.msg.client.jakarta.wmq.common.internal.Reason.createException(Reason.java:229)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageConsumer.checkJmqiCallSuccess(WMQMessageConsumer.java:217)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageConsumer.checkJmqiCallSuccess(WMQMessageConsumer.java:156)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQSyncConsumerShadow.closeInternal(WMQSyncConsumerShadow.java:442)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQConsumerShadow.closeInternal(WMQConsumerShadow.java:287)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQConsumerShadow.close(WMQConsumerShadow.java:440)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQConsumerShadow.close(WMQConsumerShadow.java:312)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageConsumer.close(WMQMessageConsumer.java:584)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsMessageConsumerImpl.close(JmsMessageConsumerImpl.java:299)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:486)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:355)
+                               : com.ibm.mq.jakarta.jms.MQSession.close(MQSession.java:280)
+                               : com.ibm.mq.demo.SessionBuilder.close(SessionBuilder.java:125)
+                               : com.ibm.mq.demo.Reseller.main(Reseller.java:89)
+     Caused by [1] --> Message : com.ibm.mq.MQException: JMSCMQ0001: IBM MQ call failed with compcode '2' ('MQCC_FAILED') reason '2009' ('MQRC_CONNECTION_BROKEN').
+                         Class : class com.ibm.mq.MQException
+                         Stack : com.ibm.msg.client.jakarta.wmq.common.internal.Reason.createException(Reason.java:217)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageConsumer.checkJmqiCallSuccess(WMQMessageConsumer.java:217)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageConsumer.checkJmqiCallSuccess(WMQMessageConsumer.java:156)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQSyncConsumerShadow.closeInternal(WMQSyncConsumerShadow.java:442)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQConsumerShadow.closeInternal(WMQConsumerShadow.java:287)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQConsumerShadow.close(WMQConsumerShadow.java:440)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQConsumerShadow.close(WMQConsumerShadow.java:312)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageConsumer.close(WMQMessageConsumer.java:584)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsMessageConsumerImpl.close(JmsMessageConsumerImpl.java:299)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:486)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:355)
+                               : com.ibm.mq.jakarta.jms.MQSession.close(MQSession.java:280)
+                               : com.ibm.mq.demo.SessionBuilder.close(SessionBuilder.java:125)
+                               : com.ibm.mq.demo.Reseller.main(Reseller.java:89)
+     Caused by [2] --> Message : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009
+                         Class : class com.ibm.mq.jmqi.JmqiException
+                         Stack : com.ibm.mq.jmqi.remote.impl.RemoteSession.sendTSH(RemoteSession.java:722)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteSession.sendTSH(RemoteSession.java:701)
+                               : com.ibm.mq.jmqi.remote.api.RemoteFAP.MQCLOSE(RemoteFAP.java:6949)
+                               : com.ibm.mq.ese.jmqi.InterceptedJmqiImpl.MQCLOSE(InterceptedJmqiImpl.java:599)
+                               : com.ibm.mq.ese.jmqi.ESEJMQI.MQCLOSE(ESEJMQI.java:315)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQSyncConsumerShadow.closeInternal(WMQSyncConsumerShadow.java:425)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQConsumerShadow.closeInternal(WMQConsumerShadow.java:287)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQConsumerShadow.close(WMQConsumerShadow.java:440)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQConsumerShadow.close(WMQConsumerShadow.java:312)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageConsumer.close(WMQMessageConsumer.java:584)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsMessageConsumerImpl.close(JmsMessageConsumerImpl.java:299)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:486)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:355)
+                               : com.ibm.mq.jakarta.jms.MQSession.close(MQSession.java:280)
+                               : com.ibm.mq.demo.SessionBuilder.close(SessionBuilder.java:125)
+                               : com.ibm.mq.demo.Reseller.main(Reseller.java:89)
+     Caused by [3] --> Message : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009
+                         Class : class com.ibm.mq.jmqi.JmqiException
+                         Stack : com.ibm.mq.jmqi.remote.impl.RemoteConnection.asyncConnectionBroken(RemoteConnection.java:4019)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:658)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:338)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:362)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1248)
+     Caused by [4] --> Message : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009;AMQ9208: Error on receive from host 'localhost/127.0.0.1:1414 (localhost)'. [1=-1,2=ffffffff,3=localhost/127.0.0.1:1414 (localhost),4=TCP]
+                         Class : class com.ibm.mq.jmqi.JmqiException
+                         Stack : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveBuffer(RemoteRcvThread.java:872)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveOneTSH(RemoteRcvThread.java:812)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:161)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:338)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:362)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1248)
+'.
+
+EXPLANATION:
+An attempt was made to deliver an exception to the connections exception listener but a listener has not been registered.
+
+ACTION:
+An exception listener must be registered with the connection to receive its exceptions.
+--------------------------------------------------------------------
+29 de setembro de 2026, 12:07:25 WAT[main] com.ibm.msg.client.jakarta.wmq.internal.WMQConnection
+Exception ignored as no exception listener is registered: '
+                       Message : com.ibm.msg.client.jakarta.jms.DetailedJMSException: JMSWMQ1107: A problem with this connection has occurred.
+An error has occurred with the IBM MQ JMS connection.
+Use the linked exception to determine the cause of this error.
+                         Class : class com.ibm.msg.client.jakarta.jms.DetailedJMSException
+                         Stack : com.ibm.msg.client.jakarta.wmq.common.internal.Reason.reasonToException(Reason.java:709)
+                               : com.ibm.msg.client.jakarta.wmq.common.internal.Reason.createException(Reason.java:229)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.checkJmqiCallSuccess(WMQMessageProducer.java:1351)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.access$400(WMQMessageProducer.java:75)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer$SpiIdentifiedProducerShadow.close(WMQMessageProducer.java:821)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.close(WMQMessageProducer.java:1398)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsMessageProducerImpl.close(JmsMessageProducerImpl.java:243)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:573)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:355)
+                               : com.ibm.mq.jakarta.jms.MQSession.close(MQSession.java:280)
+                               : com.ibm.mq.demo.SessionBuilder.close(SessionBuilder.java:125)
+                               : com.ibm.mq.demo.Reseller.main(Reseller.java:89)
+     Caused by [1] --> Message : com.ibm.mq.MQException: JMSCMQ0001: IBM MQ call failed with compcode '2' ('MQCC_FAILED') reason '2009' ('MQRC_CONNECTION_BROKEN').
+                         Class : class com.ibm.mq.MQException
+                         Stack : com.ibm.msg.client.jakarta.wmq.common.internal.Reason.createException(Reason.java:217)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.checkJmqiCallSuccess(WMQMessageProducer.java:1351)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.access$400(WMQMessageProducer.java:75)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer$SpiIdentifiedProducerShadow.close(WMQMessageProducer.java:821)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.close(WMQMessageProducer.java:1398)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsMessageProducerImpl.close(JmsMessageProducerImpl.java:243)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:573)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:355)
+                               : com.ibm.mq.jakarta.jms.MQSession.close(MQSession.java:280)
+                               : com.ibm.mq.demo.SessionBuilder.close(SessionBuilder.java:125)
+                               : com.ibm.mq.demo.Reseller.main(Reseller.java:89)
+     Caused by [2] --> Message : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009
+                         Class : class com.ibm.mq.jmqi.JmqiException
+                         Stack : com.ibm.mq.jmqi.remote.impl.RemoteSession.sendTSH(RemoteSession.java:722)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteSession.sendTSH(RemoteSession.java:701)
+                               : com.ibm.mq.jmqi.remote.api.RemoteFAP.MQCLOSE(RemoteFAP.java:6949)
+                               : com.ibm.mq.ese.jmqi.InterceptedJmqiImpl.MQCLOSE(InterceptedJmqiImpl.java:599)
+                               : com.ibm.mq.ese.jmqi.ESEJMQI.MQCLOSE(ESEJMQI.java:315)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer$SpiIdentifiedProducerShadow.close(WMQMessageProducer.java:789)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.close(WMQMessageProducer.java:1398)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsMessageProducerImpl.close(JmsMessageProducerImpl.java:243)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:573)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:355)
+                               : com.ibm.mq.jakarta.jms.MQSession.close(MQSession.java:280)
+                               : com.ibm.mq.demo.SessionBuilder.close(SessionBuilder.java:125)
+                               : com.ibm.mq.demo.Reseller.main(Reseller.java:89)
+     Caused by [3] --> Message : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009
+                         Class : class com.ibm.mq.jmqi.JmqiException
+                         Stack : com.ibm.mq.jmqi.remote.impl.RemoteConnection.asyncConnectionBroken(RemoteConnection.java:4019)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:658)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:338)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:362)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1248)
+     Caused by [4] --> Message : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009;AMQ9208: Error on receive from host 'localhost/127.0.0.1:1414 (localhost)'. [1=-1,2=ffffffff,3=localhost/127.0.0.1:1414 (localhost),4=TCP]
+                         Class : class com.ibm.mq.jmqi.JmqiException
+                         Stack : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveBuffer(RemoteRcvThread.java:872)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveOneTSH(RemoteRcvThread.java:812)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:161)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:338)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:362)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1248)
+'.
+
+EXPLANATION:
+An attempt was made to deliver an exception to the connections exception listener but a listener has not been registered.
+
+ACTION:
+An exception listener must be registered with the connection to receive its exceptions.
+--------------------------------------------------------------------
+29 de setembro de 2026, 12:07:25 WAT[main] com.ibm.msg.client.jakarta.wmq.internal.WMQConnection
+Exception ignored as no exception listener is registered: '
+                       Message : com.ibm.msg.client.jakarta.jms.DetailedJMSException: JMSWMQ1107: A problem with this connection has occurred.
+An error has occurred with the IBM MQ JMS connection.
+Use the linked exception to determine the cause of this error.
+                         Class : class com.ibm.msg.client.jakarta.jms.DetailedJMSException
+                         Stack : com.ibm.msg.client.jakarta.wmq.common.internal.Reason.reasonToException(Reason.java:709)
+                               : com.ibm.msg.client.jakarta.wmq.common.internal.Reason.createException(Reason.java:229)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.checkJmqiCallSuccess(WMQMessageProducer.java:1351)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.access$400(WMQMessageProducer.java:75)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer$SpiIdentifiedProducerShadow.close(WMQMessageProducer.java:821)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.close(WMQMessageProducer.java:1398)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsMessageProducerImpl.close(JmsMessageProducerImpl.java:243)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:573)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:355)
+                               : com.ibm.mq.jakarta.jms.MQSession.close(MQSession.java:280)
+                               : com.ibm.mq.demo.SessionBuilder.close(SessionBuilder.java:125)
+                               : com.ibm.mq.demo.Reseller.main(Reseller.java:89)
+     Caused by [1] --> Message : com.ibm.mq.MQException: JMSCMQ0001: IBM MQ call failed with compcode '2' ('MQCC_FAILED') reason '2009' ('MQRC_CONNECTION_BROKEN').
+                         Class : class com.ibm.mq.MQException
+                         Stack : com.ibm.msg.client.jakarta.wmq.common.internal.Reason.createException(Reason.java:217)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.checkJmqiCallSuccess(WMQMessageProducer.java:1351)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.access$400(WMQMessageProducer.java:75)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer$SpiIdentifiedProducerShadow.close(WMQMessageProducer.java:821)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.close(WMQMessageProducer.java:1398)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsMessageProducerImpl.close(JmsMessageProducerImpl.java:243)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:573)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:355)
+                               : com.ibm.mq.jakarta.jms.MQSession.close(MQSession.java:280)
+                               : com.ibm.mq.demo.SessionBuilder.close(SessionBuilder.java:125)
+                               : com.ibm.mq.demo.Reseller.main(Reseller.java:89)
+     Caused by [2] --> Message : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009
+                         Class : class com.ibm.mq.jmqi.JmqiException
+                         Stack : com.ibm.mq.jmqi.remote.impl.RemoteSession.sendTSH(RemoteSession.java:722)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteSession.sendTSH(RemoteSession.java:701)
+                               : com.ibm.mq.jmqi.remote.api.RemoteFAP.MQCLOSE(RemoteFAP.java:6949)
+                               : com.ibm.mq.ese.jmqi.InterceptedJmqiImpl.MQCLOSE(InterceptedJmqiImpl.java:599)
+                               : com.ibm.mq.ese.jmqi.ESEJMQI.MQCLOSE(ESEJMQI.java:315)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer$SpiIdentifiedProducerShadow.close(WMQMessageProducer.java:789)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.close(WMQMessageProducer.java:1398)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsMessageProducerImpl.close(JmsMessageProducerImpl.java:243)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:573)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:355)
+                               : com.ibm.mq.jakarta.jms.MQSession.close(MQSession.java:280)
+                               : com.ibm.mq.demo.SessionBuilder.close(SessionBuilder.java:125)
+                               : com.ibm.mq.demo.Reseller.main(Reseller.java:89)
+     Caused by [3] --> Message : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009
+                         Class : class com.ibm.mq.jmqi.JmqiException
+                         Stack : com.ibm.mq.jmqi.remote.impl.RemoteConnection.asyncConnectionBroken(RemoteConnection.java:4019)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:658)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:338)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:362)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1248)
+     Caused by [4] --> Message : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009;AMQ9208: Error on receive from host 'localhost/127.0.0.1:1414 (localhost)'. [1=-1,2=ffffffff,3=localhost/127.0.0.1:1414 (localhost),4=TCP]
+                         Class : class com.ibm.mq.jmqi.JmqiException
+                         Stack : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveBuffer(RemoteRcvThread.java:872)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveOneTSH(RemoteRcvThread.java:812)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:161)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:338)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:362)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1248)
+'.
+
+EXPLANATION:
+An attempt was made to deliver an exception to the connections exception listener but a listener has not been registered.
+
+ACTION:
+An exception listener must be registered with the connection to receive its exceptions.
+--------------------------------------------------------------------
+29 de setembro de 2026, 12:07:25 WAT[main] com.ibm.msg.client.jakarta.wmq.internal.WMQConnection
+Exception ignored as no exception listener is registered: '
+                       Message : com.ibm.msg.client.jakarta.jms.DetailedJMSException: JMSWMQ1107: A problem with this connection has occurred.
+An error has occurred with the IBM MQ JMS connection.
+Use the linked exception to determine the cause of this error.
+                         Class : class com.ibm.msg.client.jakarta.jms.DetailedJMSException
+                         Stack : com.ibm.msg.client.jakarta.wmq.common.internal.Reason.reasonToException(Reason.java:709)
+                               : com.ibm.msg.client.jakarta.wmq.common.internal.Reason.createException(Reason.java:229)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.checkJmqiCallSuccess(WMQMessageProducer.java:1351)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.access$400(WMQMessageProducer.java:75)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer$SpiIdentifiedProducerShadow.close(WMQMessageProducer.java:821)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.close(WMQMessageProducer.java:1398)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsMessageProducerImpl.close(JmsMessageProducerImpl.java:243)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:573)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:355)
+                               : com.ibm.mq.jakarta.jms.MQSession.close(MQSession.java:280)
+                               : com.ibm.mq.demo.SessionBuilder.close(SessionBuilder.java:125)
+                               : com.ibm.mq.demo.Reseller.main(Reseller.java:89)
+     Caused by [1] --> Message : com.ibm.mq.MQException: JMSCMQ0001: IBM MQ call failed with compcode '2' ('MQCC_FAILED') reason '2009' ('MQRC_CONNECTION_BROKEN').
+                         Class : class com.ibm.mq.MQException
+                         Stack : com.ibm.msg.client.jakarta.wmq.common.internal.Reason.createException(Reason.java:217)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.checkJmqiCallSuccess(WMQMessageProducer.java:1351)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.access$400(WMQMessageProducer.java:75)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer$SpiIdentifiedProducerShadow.close(WMQMessageProducer.java:821)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.close(WMQMessageProducer.java:1398)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsMessageProducerImpl.close(JmsMessageProducerImpl.java:243)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:573)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:355)
+                               : com.ibm.mq.jakarta.jms.MQSession.close(MQSession.java:280)
+                               : com.ibm.mq.demo.SessionBuilder.close(SessionBuilder.java:125)
+                               : com.ibm.mq.demo.Reseller.main(Reseller.java:89)
+     Caused by [2] --> Message : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009
+                         Class : class com.ibm.mq.jmqi.JmqiException
+                         Stack : com.ibm.mq.jmqi.remote.impl.RemoteSession.sendTSH(RemoteSession.java:722)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteSession.sendTSH(RemoteSession.java:701)
+                               : com.ibm.mq.jmqi.remote.api.RemoteFAP.MQCLOSE(RemoteFAP.java:6949)
+                               : com.ibm.mq.ese.jmqi.InterceptedJmqiImpl.MQCLOSE(InterceptedJmqiImpl.java:599)
+                               : com.ibm.mq.ese.jmqi.ESEJMQI.MQCLOSE(ESEJMQI.java:315)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer$SpiIdentifiedProducerShadow.close(WMQMessageProducer.java:789)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.close(WMQMessageProducer.java:1398)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsMessageProducerImpl.close(JmsMessageProducerImpl.java:243)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:573)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:355)
+                               : com.ibm.mq.jakarta.jms.MQSession.close(MQSession.java:280)
+                               : com.ibm.mq.demo.SessionBuilder.close(SessionBuilder.java:125)
+                               : com.ibm.mq.demo.Reseller.main(Reseller.java:89)
+     Caused by [3] --> Message : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009
+                         Class : class com.ibm.mq.jmqi.JmqiException
+                         Stack : com.ibm.mq.jmqi.remote.impl.RemoteConnection.asyncConnectionBroken(RemoteConnection.java:4019)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:658)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:338)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:362)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1248)
+     Caused by [4] --> Message : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009;AMQ9208: Error on receive from host 'localhost/127.0.0.1:1414 (localhost)'. [1=-1,2=ffffffff,3=localhost/127.0.0.1:1414 (localhost),4=TCP]
+                         Class : class com.ibm.mq.jmqi.JmqiException
+                         Stack : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveBuffer(RemoteRcvThread.java:872)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveOneTSH(RemoteRcvThread.java:812)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:161)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:338)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:362)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1248)
+'.
+
+EXPLANATION:
+An attempt was made to deliver an exception to the connections exception listener but a listener has not been registered.
+
+ACTION:
+An exception listener must be registered with the connection to receive its exceptions.
+--------------------------------------------------------------------
+29 de setembro de 2026, 12:07:25 WAT[main] com.ibm.msg.client.jakarta.wmq.internal.WMQConnection
+Exception ignored as no exception listener is registered: '
+                       Message : com.ibm.msg.client.jakarta.jms.DetailedJMSException: JMSWMQ1107: A problem with this connection has occurred.
+An error has occurred with the IBM MQ JMS connection.
+Use the linked exception to determine the cause of this error.
+                         Class : class com.ibm.msg.client.jakarta.jms.DetailedJMSException
+                         Stack : com.ibm.msg.client.jakarta.wmq.common.internal.Reason.reasonToException(Reason.java:709)
+                               : com.ibm.msg.client.jakarta.wmq.common.internal.Reason.createException(Reason.java:229)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.checkJmqiCallSuccess(WMQMessageProducer.java:1351)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.access$400(WMQMessageProducer.java:75)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer$SpiIdentifiedProducerShadow.close(WMQMessageProducer.java:821)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.close(WMQMessageProducer.java:1398)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsMessageProducerImpl.close(JmsMessageProducerImpl.java:243)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:573)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:355)
+                               : com.ibm.mq.jakarta.jms.MQSession.close(MQSession.java:280)
+                               : com.ibm.mq.demo.SessionBuilder.close(SessionBuilder.java:125)
+                               : com.ibm.mq.demo.Reseller.main(Reseller.java:89)
+     Caused by [1] --> Message : com.ibm.mq.MQException: JMSCMQ0001: IBM MQ call failed with compcode '2' ('MQCC_FAILED') reason '2009' ('MQRC_CONNECTION_BROKEN').
+                         Class : class com.ibm.mq.MQException
+                         Stack : com.ibm.msg.client.jakarta.wmq.common.internal.Reason.createException(Reason.java:217)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.checkJmqiCallSuccess(WMQMessageProducer.java:1351)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.access$400(WMQMessageProducer.java:75)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer$SpiIdentifiedProducerShadow.close(WMQMessageProducer.java:821)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.close(WMQMessageProducer.java:1398)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsMessageProducerImpl.close(JmsMessageProducerImpl.java:243)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:573)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:355)
+                               : com.ibm.mq.jakarta.jms.MQSession.close(MQSession.java:280)
+                               : com.ibm.mq.demo.SessionBuilder.close(SessionBuilder.java:125)
+                               : com.ibm.mq.demo.Reseller.main(Reseller.java:89)
+     Caused by [2] --> Message : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009
+                         Class : class com.ibm.mq.jmqi.JmqiException
+                         Stack : com.ibm.mq.jmqi.remote.impl.RemoteSession.sendTSH(RemoteSession.java:722)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteSession.sendTSH(RemoteSession.java:701)
+                               : com.ibm.mq.jmqi.remote.api.RemoteFAP.MQCLOSE(RemoteFAP.java:6949)
+                               : com.ibm.mq.ese.jmqi.InterceptedJmqiImpl.MQCLOSE(InterceptedJmqiImpl.java:599)
+                               : com.ibm.mq.ese.jmqi.ESEJMQI.MQCLOSE(ESEJMQI.java:315)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer$SpiIdentifiedProducerShadow.close(WMQMessageProducer.java:789)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.close(WMQMessageProducer.java:1398)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsMessageProducerImpl.close(JmsMessageProducerImpl.java:243)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:573)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:355)
+                               : com.ibm.mq.jakarta.jms.MQSession.close(MQSession.java:280)
+                               : com.ibm.mq.demo.SessionBuilder.close(SessionBuilder.java:125)
+                               : com.ibm.mq.demo.Reseller.main(Reseller.java:89)
+     Caused by [3] --> Message : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009
+                         Class : class com.ibm.mq.jmqi.JmqiException
+                         Stack : com.ibm.mq.jmqi.remote.impl.RemoteConnection.asyncConnectionBroken(RemoteConnection.java:4019)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:658)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:338)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:362)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1248)
+     Caused by [4] --> Message : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009;AMQ9208: Error on receive from host 'localhost/127.0.0.1:1414 (localhost)'. [1=-1,2=ffffffff,3=localhost/127.0.0.1:1414 (localhost),4=TCP]
+                         Class : class com.ibm.mq.jmqi.JmqiException
+                         Stack : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveBuffer(RemoteRcvThread.java:872)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveOneTSH(RemoteRcvThread.java:812)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:161)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:338)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:362)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1248)
+'.
+
+EXPLANATION:
+An attempt was made to deliver an exception to the connections exception listener but a listener has not been registered.
+
+ACTION:
+An exception listener must be registered with the connection to receive its exceptions.
+--------------------------------------------------------------------
+29 de setembro de 2026, 12:07:25 WAT[main] com.ibm.msg.client.jakarta.wmq.internal.WMQConnection
+Exception ignored as no exception listener is registered: '
+                       Message : com.ibm.msg.client.jakarta.jms.DetailedJMSException: JMSWMQ1107: A problem with this connection has occurred.
+An error has occurred with the IBM MQ JMS connection.
+Use the linked exception to determine the cause of this error.
+                         Class : class com.ibm.msg.client.jakarta.jms.DetailedJMSException
+                         Stack : com.ibm.msg.client.jakarta.wmq.common.internal.Reason.reasonToException(Reason.java:709)
+                               : com.ibm.msg.client.jakarta.wmq.common.internal.Reason.createException(Reason.java:229)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.checkJmqiCallSuccess(WMQMessageProducer.java:1351)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.access$400(WMQMessageProducer.java:75)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer$SpiIdentifiedProducerShadow.close(WMQMessageProducer.java:821)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.close(WMQMessageProducer.java:1398)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsMessageProducerImpl.close(JmsMessageProducerImpl.java:243)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:573)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:355)
+                               : com.ibm.mq.jakarta.jms.MQSession.close(MQSession.java:280)
+                               : com.ibm.mq.demo.SessionBuilder.close(SessionBuilder.java:125)
+                               : com.ibm.mq.demo.Reseller.main(Reseller.java:89)
+     Caused by [1] --> Message : com.ibm.mq.MQException: JMSCMQ0001: IBM MQ call failed with compcode '2' ('MQCC_FAILED') reason '2009' ('MQRC_CONNECTION_BROKEN').
+                         Class : class com.ibm.mq.MQException
+                         Stack : com.ibm.msg.client.jakarta.wmq.common.internal.Reason.createException(Reason.java:217)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.checkJmqiCallSuccess(WMQMessageProducer.java:1351)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.access$400(WMQMessageProducer.java:75)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer$SpiIdentifiedProducerShadow.close(WMQMessageProducer.java:821)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.close(WMQMessageProducer.java:1398)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsMessageProducerImpl.close(JmsMessageProducerImpl.java:243)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:573)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:355)
+                               : com.ibm.mq.jakarta.jms.MQSession.close(MQSession.java:280)
+                               : com.ibm.mq.demo.SessionBuilder.close(SessionBuilder.java:125)
+                               : com.ibm.mq.demo.Reseller.main(Reseller.java:89)
+     Caused by [2] --> Message : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009
+                         Class : class com.ibm.mq.jmqi.JmqiException
+                         Stack : com.ibm.mq.jmqi.remote.impl.RemoteSession.sendTSH(RemoteSession.java:722)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteSession.sendTSH(RemoteSession.java:701)
+                               : com.ibm.mq.jmqi.remote.api.RemoteFAP.MQCLOSE(RemoteFAP.java:6949)
+                               : com.ibm.mq.ese.jmqi.InterceptedJmqiImpl.MQCLOSE(InterceptedJmqiImpl.java:599)
+                               : com.ibm.mq.ese.jmqi.ESEJMQI.MQCLOSE(ESEJMQI.java:315)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer$SpiIdentifiedProducerShadow.close(WMQMessageProducer.java:789)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.close(WMQMessageProducer.java:1398)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsMessageProducerImpl.close(JmsMessageProducerImpl.java:243)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:573)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:355)
+                               : com.ibm.mq.jakarta.jms.MQSession.close(MQSession.java:280)
+                               : com.ibm.mq.demo.SessionBuilder.close(SessionBuilder.java:125)
+                               : com.ibm.mq.demo.Reseller.main(Reseller.java:89)
+     Caused by [3] --> Message : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009
+                         Class : class com.ibm.mq.jmqi.JmqiException
+                         Stack : com.ibm.mq.jmqi.remote.impl.RemoteConnection.asyncConnectionBroken(RemoteConnection.java:4019)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:658)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:338)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:362)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1248)
+     Caused by [4] --> Message : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009;AMQ9208: Error on receive from host 'localhost/127.0.0.1:1414 (localhost)'. [1=-1,2=ffffffff,3=localhost/127.0.0.1:1414 (localhost),4=TCP]
+                         Class : class com.ibm.mq.jmqi.JmqiException
+                         Stack : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveBuffer(RemoteRcvThread.java:872)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveOneTSH(RemoteRcvThread.java:812)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:161)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:338)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:362)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1248)
+'.
+
+EXPLANATION:
+An attempt was made to deliver an exception to the connections exception listener but a listener has not been registered.
+
+ACTION:
+An exception listener must be registered with the connection to receive its exceptions.
+--------------------------------------------------------------------
+29 de setembro de 2026, 12:07:25 WAT[main] com.ibm.msg.client.jakarta.wmq.internal.WMQConnection
+Exception ignored as no exception listener is registered: '
+                       Message : com.ibm.msg.client.jakarta.jms.DetailedJMSException: JMSWMQ1107: A problem with this connection has occurred.
+An error has occurred with the IBM MQ JMS connection.
+Use the linked exception to determine the cause of this error.
+                         Class : class com.ibm.msg.client.jakarta.jms.DetailedJMSException
+                         Stack : com.ibm.msg.client.jakarta.wmq.common.internal.Reason.reasonToException(Reason.java:709)
+                               : com.ibm.msg.client.jakarta.wmq.common.internal.Reason.createException(Reason.java:229)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.checkJmqiCallSuccess(WMQMessageProducer.java:1351)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.access$400(WMQMessageProducer.java:75)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer$SpiIdentifiedProducerShadow.close(WMQMessageProducer.java:821)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.close(WMQMessageProducer.java:1398)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsMessageProducerImpl.close(JmsMessageProducerImpl.java:243)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:573)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:355)
+                               : com.ibm.mq.jakarta.jms.MQSession.close(MQSession.java:280)
+                               : com.ibm.mq.demo.SessionBuilder.close(SessionBuilder.java:125)
+                               : com.ibm.mq.demo.Reseller.main(Reseller.java:89)
+     Caused by [1] --> Message : com.ibm.mq.MQException: JMSCMQ0001: IBM MQ call failed with compcode '2' ('MQCC_FAILED') reason '2009' ('MQRC_CONNECTION_BROKEN').
+                         Class : class com.ibm.mq.MQException
+                         Stack : com.ibm.msg.client.jakarta.wmq.common.internal.Reason.createException(Reason.java:217)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.checkJmqiCallSuccess(WMQMessageProducer.java:1351)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.access$400(WMQMessageProducer.java:75)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer$SpiIdentifiedProducerShadow.close(WMQMessageProducer.java:821)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.close(WMQMessageProducer.java:1398)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsMessageProducerImpl.close(JmsMessageProducerImpl.java:243)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:573)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:355)
+                               : com.ibm.mq.jakarta.jms.MQSession.close(MQSession.java:280)
+                               : com.ibm.mq.demo.SessionBuilder.close(SessionBuilder.java:125)
+                               : com.ibm.mq.demo.Reseller.main(Reseller.java:89)
+     Caused by [2] --> Message : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009
+                         Class : class com.ibm.mq.jmqi.JmqiException
+                         Stack : com.ibm.mq.jmqi.remote.impl.RemoteSession.sendTSH(RemoteSession.java:722)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteSession.sendTSH(RemoteSession.java:701)
+                               : com.ibm.mq.jmqi.remote.api.RemoteFAP.MQCLOSE(RemoteFAP.java:6949)
+                               : com.ibm.mq.ese.jmqi.InterceptedJmqiImpl.MQCLOSE(InterceptedJmqiImpl.java:599)
+                               : com.ibm.mq.ese.jmqi.ESEJMQI.MQCLOSE(ESEJMQI.java:315)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer$SpiIdentifiedProducerShadow.close(WMQMessageProducer.java:789)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQMessageProducer.close(WMQMessageProducer.java:1398)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsMessageProducerImpl.close(JmsMessageProducerImpl.java:243)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:573)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:355)
+                               : com.ibm.mq.jakarta.jms.MQSession.close(MQSession.java:280)
+                               : com.ibm.mq.demo.SessionBuilder.close(SessionBuilder.java:125)
+                               : com.ibm.mq.demo.Reseller.main(Reseller.java:89)
+     Caused by [3] --> Message : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009
+                         Class : class com.ibm.mq.jmqi.JmqiException
+                         Stack : com.ibm.mq.jmqi.remote.impl.RemoteConnection.asyncConnectionBroken(RemoteConnection.java:4019)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:658)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:338)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:362)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1248)
+     Caused by [4] --> Message : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009;AMQ9208: Error on receive from host 'localhost/127.0.0.1:1414 (localhost)'. [1=-1,2=ffffffff,3=localhost/127.0.0.1:1414 (localhost),4=TCP]
+                         Class : class com.ibm.mq.jmqi.JmqiException
+                         Stack : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveBuffer(RemoteRcvThread.java:872)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveOneTSH(RemoteRcvThread.java:812)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:161)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:338)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:362)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1248)
+'.
+
+EXPLANATION:
+An attempt was made to deliver an exception to the connections exception listener but a listener has not been registered.
+
+ACTION:
+An exception listener must be registered with the connection to receive its exceptions.
+--------------------------------------------------------------------
+29 de setembro de 2026, 12:07:25 WAT[main] com.ibm.msg.client.jakarta.wmq.internal.WMQConnection
+Exception ignored as no exception listener is registered: '
+                       Message : com.ibm.msg.client.jakarta.jms.DetailedJMSException: JMSWMQ1107: A problem with this connection has occurred.
+An error has occurred with the IBM MQ JMS connection.
+Use the linked exception to determine the cause of this error.
+                         Class : class com.ibm.msg.client.jakarta.jms.DetailedJMSException
+                         Stack : com.ibm.msg.client.jakarta.wmq.common.internal.Reason.reasonToException(Reason.java:709)
+                               : com.ibm.msg.client.jakarta.wmq.common.internal.Reason.createException(Reason.java:229)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQSession.disconnect(WMQSession.java:869)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQSession.close(WMQSession.java:788)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:632)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:355)
+                               : com.ibm.mq.jakarta.jms.MQSession.close(MQSession.java:280)
+                               : com.ibm.mq.demo.SessionBuilder.close(SessionBuilder.java:125)
+                               : com.ibm.mq.demo.Reseller.main(Reseller.java:89)
+     Caused by [1] --> Message : com.ibm.mq.MQException: JMSCMQ0001: IBM MQ call failed with compcode '2' ('MQCC_FAILED') reason '2009' ('MQRC_CONNECTION_BROKEN').
+                         Class : class com.ibm.mq.MQException
+                         Stack : com.ibm.msg.client.jakarta.wmq.common.internal.Reason.createException(Reason.java:217)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQSession.disconnect(WMQSession.java:869)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQSession.close(WMQSession.java:788)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:632)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:355)
+                               : com.ibm.mq.jakarta.jms.MQSession.close(MQSession.java:280)
+                               : com.ibm.mq.demo.SessionBuilder.close(SessionBuilder.java:125)
+                               : com.ibm.mq.demo.Reseller.main(Reseller.java:89)
+     Caused by [2] --> Message : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009
+                         Class : class com.ibm.mq.jmqi.JmqiException
+                         Stack : com.ibm.mq.jmqi.remote.impl.RemoteSession.sendTSH(RemoteSession.java:722)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteSession.sendTSH(RemoteSession.java:701)
+                               : com.ibm.mq.jmqi.remote.api.RemoteFAP.MQDISC(RemoteFAP.java:1780)
+                               : com.ibm.mq.jmqi.remote.api.RemoteFAP.MQDISC(RemoteFAP.java:1696)
+                               : com.ibm.mq.ese.jmqi.InterceptedJmqiImpl.MQDISC(InterceptedJmqiImpl.java:431)
+                               : com.ibm.mq.ese.jmqi.ESEJMQI.MQDISC(ESEJMQI.java:396)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQSession.disconnect(WMQSession.java:857)
+                               : com.ibm.msg.client.jakarta.wmq.internal.WMQSession.close(WMQSession.java:788)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:632)
+                               : com.ibm.msg.client.jakarta.jms.internal.JmsSessionImpl.close(JmsSessionImpl.java:355)
+                               : com.ibm.mq.jakarta.jms.MQSession.close(MQSession.java:280)
+                               : com.ibm.mq.demo.SessionBuilder.close(SessionBuilder.java:125)
+                               : com.ibm.mq.demo.Reseller.main(Reseller.java:89)
+     Caused by [3] --> Message : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009
+                         Class : class com.ibm.mq.jmqi.JmqiException
+                         Stack : com.ibm.mq.jmqi.remote.impl.RemoteConnection.asyncConnectionBroken(RemoteConnection.java:4019)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:658)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:338)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:362)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1248)
+     Caused by [4] --> Message : com.ibm.mq.jmqi.JmqiException: CC=2;RC=2009;AMQ9208: Error on receive from host 'localhost/127.0.0.1:1414 (localhost)'. [1=-1,2=ffffffff,3=localhost/127.0.0.1:1414 (localhost),4=TCP]
+                         Class : class com.ibm.mq.jmqi.JmqiException
+                         Stack : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveBuffer(RemoteRcvThread.java:872)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.receiveOneTSH(RemoteRcvThread.java:812)
+                               : com.ibm.mq.jmqi.remote.impl.RemoteRcvThread.run(RemoteRcvThread.java:161)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.runTask(WorkQueueItem.java:338)
+                               : com.ibm.msg.client.commonservices.workqueue.SimpleWorkQueueItem.runItem(SimpleWorkQueueItem.java:99)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueItem.run(WorkQueueItem.java:362)
+                               : com.ibm.msg.client.commonservices.workqueue.WorkQueueManager.runWorkQueueItem(WorkQueueManager.java:312)
+                               : com.ibm.msg.client.commonservices.j2se.workqueue.WorkQueueManagerImplementation$ThreadPoolWorker.run(WorkQueueManagerImplementation.java:1248)
+'.
+
+EXPLANATION:
+An attempt was made to deliver an exception to the connections exception listener but a listener has not been registered.
+
+ACTION:
+An exception listener must be registered with the connection to receive its exceptions.
+--------------------------------------------------------------------
